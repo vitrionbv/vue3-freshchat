@@ -1,23 +1,20 @@
 {
   "name": "vue3-freshchat",
   "version": "0.0.7",
-  "description": "A vue3 freshchat library",
-  "main": "./dist/fresh-chat.umd.js",
-  "module": "./dist/fresh-chat.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/vue3-freshchat.umd.cjs",
+  "module": "./dist/vue3-freshchat.js",
   "exports": {
     ".": {
-      "import": "./dist/fresh-chat.esm.js",
-      "require": "./dist/fresh-chat.js"
+      "import": "./dist/vue3-freshchat.js",
+      "require": "./dist/vue3-freshchat.umd.cjs"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "release": "npm run build && release-it"
   },
