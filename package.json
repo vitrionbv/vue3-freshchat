@@ -2,7 +2,9 @@
   "name": "vue3-freshchat",
   "version": "0.0.7",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/vue3-freshchat.umd.cjs",
   "module": "./dist/vue3-freshchat.js",
   "exports": {
@@ -13,10 +15,11 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
+    "commit": "cz -a",
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
-    "release": "npm run build && release-it"
+    "release": "npm run build && npm run commit && release-it"
   },
   "author": "Vitrion",
   "dependencies": {
@@ -24,11 +27,17 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
     "release-it": "^16.1.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-dts": "^3.3.1",
     "vue-tsc": "^1.8.3"
   },
-  "release-it": {}
+  "release-it": {},
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
