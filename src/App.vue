@@ -1,0 +1,11 @@
+<script setup lang="ts">
+import FreshChat from "./components/FreshChat.vue";
+</script>
+
+<template>
+  <FreshChat source="//eu.fw-cdn.com/123123/123123.js" :id="123" first_name="Jan" last_name="Pieter" email="test@asd.nl" :extraProperties="{'cf_client':'test'}"/>
+</template>
+
+<style scoped>
+
+</style>

@@ -1,0 +1,37 @@
+{
+  "name": "vue3-freshchat",
+  "version": "0.0.3",
+  "description": "A vue3 freshchat library",
+  "main": "./dist/fresh-chat.umd.js",
+  "module": "./dist/fresh-chat.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/fileName.esm.js",
+      "require": "./dist/fileName.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "release": "release-it"
+  },
+  "author": "Vitrion",
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "release-it": "^16.1.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.3.1",
+    "vue-tsc": "^1.8.3"
+  },
+  "release-it": {}
+}
