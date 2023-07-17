@@ -1,6 +1,6 @@
 {
   "name": "vue3-freshchat",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A vue3 freshchat library",
   "main": "./dist/fresh-chat.umd.js",
   "module": "./dist/fresh-chat.js",
