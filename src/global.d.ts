@@ -17,7 +17,7 @@ export interface FreshChatWidget {
     // Add more methods/properties here if needed
 }
 
-interface Window {
+export interface FreshWindow extends Window {
     fcSettings: FreshChatSettings;
     fcWidget: FreshChatWidget;
 }

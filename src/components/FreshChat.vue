@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {onMounted} from "vue";
+import {FreshWindow} from "../global";
 
 
 interface Props {
@@ -23,13 +24,13 @@ onMounted(() => {
   document.body.appendChild(script);
 
   // Set user information
-  window.fcSettings = {
+  (window as unknown as FreshWindow).fcSettings = {
     onInit: function() {
-      if(props.id) window.fcWidget.setExternalId(props.id);
-      if(props.first_name) window.fcWidget.user.setFirstName(props.first_name);
-      if(props.last_name) window.fcWidget.user.setLastName(props.last_name);
-      if(props.email) window.fcWidget.user.setEmail(props.email);
-      if(props.extraProperties) window.fcWidget.user.setProperties(props.extraProperties);
+      if(props.id) (window as unknown as FreshWindow).fcWidget.setExternalId(`${props.id}`);
+      if(props.first_name) (window as unknown as FreshWindow).fcWidget.user.setFirstName(props.first_name);
+      if(props.last_name) (window as unknown as FreshWindow).fcWidget.user.setLastName(props.last_name);
+      if(props.email) (window as unknown as FreshWindow).fcWidget.user.setEmail(props.email);
+      if(props.extraProperties) (window as unknown as FreshWindow).fcWidget.user.setProperties(props.extraProperties);
     }
   }
 });
