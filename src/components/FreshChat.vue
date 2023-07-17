@@ -36,6 +36,7 @@ onMounted(() => {
     }
   }
 });
+
 onUnmounted(()=>{
   // Remove Fresh Chat script
   let fcWidget = (window as unknown as FreshWindow).fcWidget;
