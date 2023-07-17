@@ -7,8 +7,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/fileName.esm.js",
-      "require": "./dist/fileName.js"
+      "import": "./dist/fresh-chat.esm.js",
+      "require": "./dist/fresh-chat.js"
     }
   },
   "files": [
