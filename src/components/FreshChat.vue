@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {onMounted} from "vue";
+import {onMounted, onUnmounted} from "vue";
 import {FreshWindow} from "../global";
 
 
@@ -23,6 +23,8 @@ onMounted(() => {
   script.setAttribute('chat', 'true');
   document.body.appendChild(script);
 
+
+
   // Set user information
   (window as unknown as FreshWindow).fcSettings = {
     onInit: function() {
@@ -34,6 +36,13 @@ onMounted(() => {
     }
   }
 });
+onUnmounted(()=>{
+  // Remove Fresh Chat script
+  let fcWidget = (window as unknown as FreshWindow).fcWidget;
+  if (fcWidget) {
+    fcWidget.destroy?.();
+  }
+})
 </script>
 
 <template>

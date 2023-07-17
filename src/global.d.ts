@@ -6,6 +6,7 @@ export interface FreshChatSettings {
 }
 
 export interface FreshChatWidget {
+    destroy?: () => void;
     setExternalId: (externalId: string) => void;
     user: {
         setFirstName: (firstName: string) => void;
