@@ -1,18 +1,63 @@
-# Vue 3 + TypeScript + Vite
+# Vue3 FreshChat
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+[![Version](https://img.shields.io/npm/v/vue3-freshchat.svg)](https://www.npmjs.com/package/vue3-freshchat)
 
-## Recommended IDE Setup
+Vue3 FreshChat is a Vue 3 package that enables easy integration of the FreshChat widget into your Vue 3 applications. FreshChat is a customer messaging platform that allows you to engage with your website visitors and provide real-time support.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Installation
 
-## Type Support For `.vue` Imports in TS
+You can install the Vue3 FreshChat package using npm or yarn:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+```bash
+npm install vue3-freshchat
+```
+or
+```bash
+yarn add vue3-freshchat
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Usage
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+To use Vue3 FreshChat, follow these steps:
+
+1. Import the `FreshChat` component in your Vue application:
+
+```javascript
+import FreshChat from "vue3-freshchat";
+```
+
+2. Add the `FreshChat` component to your template, passing the necessary props:
+
+```html
+<FreshChat source="//eu.fw-cdn.com/123123/123123.js" :id="123" first_name="Jan" last_name="Pieter" email="test@asd.nl" :extraProperties="{'cf_client':'test'}" />
+```
+
+3. Customize the template and scoped styles as needed.
+
+## Props
+
+The `FreshChat` component accepts the following props:
+
+- `source` (required): The source URL of the FreshChat script.
+
+- `id`: The user's external ID.
+
+- `first_name`: The user's first name.
+
+- `last_name`: The user's last name.
+
+- `email`: The user's email address.
+
+- `extraProperties`: Additional properties for the user as a key-value object.
+
+## Example
+
+```html
+<template>
+    <FreshChat source="//eu.fw-cdn.com/123123/123123.js" :id="123" first_name="Jan" last_name="Pieter" email="test@asd.nl" :extraProperties="{'cf_client':'test'}" />
+</template>
+```
+
+## License
+
+Vue3 FreshChat is licensed under the [MIT License](https://github.com/example/repo/blob/master/LICENSE).
