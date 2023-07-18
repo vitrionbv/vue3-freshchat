@@ -7,5 +7,4 @@ import FreshChat from "./components/FreshChat.vue";
 </template>
 
 <style scoped>
-
 </style>
