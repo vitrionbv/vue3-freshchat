@@ -4,6 +4,12 @@ export interface FreshChatSettings {
     onInit?: () => void;
     // Add more properties here if needed
 }
+export interface FreshChatConfig {
+    config?: {
+        eagerLoad?:boolean
+    }
+    // Add more properties here if needed
+}
 
 export interface FreshChatWidget {
     destroy?: () => void;
@@ -21,4 +27,5 @@ export interface FreshChatWidget {
 export interface FreshWindow extends Window {
     fcSettings: FreshChatSettings;
     fcWidget: FreshChatWidget;
+    fcWidgetMessengerConfig:FreshChatConfig;
 }
