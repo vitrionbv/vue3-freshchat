@@ -15,14 +15,18 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  delay: 1000,
+  delay: 0,
   eagerLoad: true
 })
 
 
 onMounted(() => {
   setTimeout(() => {
+    const script = document.createElement('script');
+    script.src = props.source;
+    script.setAttribute('chat', 'true');
 
+    document.body.appendChild(script);
     (window as unknown as FreshWindow).fcWidgetMessengerConfig = {
       config: {
         eagerLoad: props.eagerLoad
@@ -39,11 +43,7 @@ onMounted(() => {
       }
     };
 
-    const script = document.createElement('script');
-    script.src = props.source;
-    script.setAttribute('chat', 'true');
 
-    document.body.appendChild(script);
   }, props.delay)
 });
 
